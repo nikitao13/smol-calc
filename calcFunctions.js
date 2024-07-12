@@ -10,7 +10,10 @@ const areNums = (a, b) => {
 const add = (a, b) => a + b;
 const sub = (a, b) => a - b;
 const mult = (a, b) => a * b;
-const divide = (a, b) => (b === 0 ? "Cannot divide by zero" : a / b);
+const divide = (a, b) => {
+  if (b === 0) throw new Error("Cannot divide by zero");
+  return a / b;
+}
 
 // calc function w/ check for numbers
 const calc = (fn, a, b) => {
